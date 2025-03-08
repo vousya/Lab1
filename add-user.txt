@@ -1,0 +1,8 @@
+FUNCTION add_user(username, details):
+    //fixed bugs
+    //added some more functionality
+    IF username IS EMPTY THEN RETURN FALSE
+    user = NEW User(username, details)
+    users_list.ADD(user)
+    SAVE_TO_STORAGE(users_list)
+    RETURN TRUE
