@@ -1,0 +1,7 @@
+FUNCTION remove_user(username):
+    IF username IS EMPTY THEN RETURN FALSE
+    user = FIND_USER(users_list, username)
+    IF user IS NULL THEN RETURN FALSE
+    users_list.REMOVE(user)
+    SAVE_TO_STORAGE(users_list)
+    RETURN TRUE
