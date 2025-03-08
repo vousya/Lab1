@@ -1,7 +1,8 @@
-FUNCTION edit_user(username, new_details):
+FUNCTION add_user(username, details):
+    //fixed bugs
+    //added some more functionality
     IF username IS EMPTY THEN RETURN FALSE
-    user = FIND_USER(users_list, username)
-    IF user IS NULL THEN RETURN FALSE
-    user.details = new_details
+    user = NEW User(username, details)
+    users_list.ADD(user)
     SAVE_TO_STORAGE(users_list)
     RETURN TRUE
