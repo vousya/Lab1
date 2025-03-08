@@ -1,0 +1,6 @@
+FUNCTION login_user(username, password):
+    IF username IS EMPTY OR password IS EMPTY THEN RETURN FALSE
+    user = FIND_USER(users_list, username)
+    IF user IS NULL THEN RETURN FALSE
+    IF user.password != password THEN RETURN FALSE
+    RETURN TRUE
